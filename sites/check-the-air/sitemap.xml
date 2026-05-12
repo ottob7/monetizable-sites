@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://checktheair.io/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+<url><loc>https://checktheair.io/privacy.html</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+<url><loc>https://checktheair.io/contact.html</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+<url><loc>https://checktheair.io/city/los-angeles-ca.html</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+<url><loc>https://checktheair.io/city/new-york-ny.html</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+<url><loc>https://checktheair.io/city/austin-tx.html</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+<url><loc>https://checktheair.io/city/chicago-il.html</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+<url><loc>https://checktheair.io/city/phoenix-az.html</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+<url><loc>https://checktheair.io/city/seattle-wa.html</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+<url><loc>https://checktheair.io/city/denver-co.html</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+<url><loc>https://checktheair.io/city/miami-fl.html</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+</urlset>

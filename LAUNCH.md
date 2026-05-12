@@ -4,8 +4,8 @@
 
 Launch in this order:
 
-1. **Can I Breathe Today?** — strongest ad/affiliate upside and best recurring utility.
-2. **VerseWise** — strong SEO surface area; expand with more verse/topic pages after the first launch.
+1. **Check the Air** — strongest ad/affiliate upside and best recurring utility.
+2. **Verse Finder** — strong SEO surface area; expand with more verse/topic pages after the first launch.
 
 ## Deployment flow
 
@@ -75,8 +75,8 @@ Before applying to Google AdSense:
 1. Replace `ca-pub-XXXXXXXXXXXXXXXX` with your AdSense publisher ID.
 2. Replace placeholder contact emails if needed.
 3. Attach real domains in Vercel:
-   - `canibreathetoday.com` or another air-quality domain
-   - `versewise.app` or another Bible-site domain
+   - `checktheair.io` or another air-quality domain
+   - `versefinder.io` or another Bible-site domain
 4. In Google Search Console, add each domain and submit:
    - `https://your-air-domain/sitemap.xml`
    - `https://your-verse-domain/sitemap.xml`
@@ -93,27 +93,27 @@ Then update canonical URLs and sitemap domains in the files before final product
 
 ## Current static roots
 
-Can I Breathe Today:
+Check the Air:
 
 ```text
-/home/lenny/monetizable-sites/sites/can-i-breathe-today
+/home/lenny/monetizable-sites/sites/check-the-air
 ```
 
-VerseWise:
+Verse Finder:
 
 ```text
-/home/lenny/monetizable-sites/sites/versewise
+/home/lenny/monetizable-sites/sites/versefinder
 ```
 
 ## Expansion after launch
 
-Can I Breathe Today:
+Check the Air:
 - Add top 100 US city AQI pages.
 - Add state wildfire smoke pages.
 - Add "safe to run outside" pages.
 - Add affiliate blocks for air purifiers, HVAC filters, masks, and allergy products.
 
-VerseWise:
+Verse Finder:
 - Add 100+ verse pages.
 - Add topic pages: anxiety, grief, forgiveness, marriage, parenting, hope, fear, anger.
 - Add reading plans and email capture.

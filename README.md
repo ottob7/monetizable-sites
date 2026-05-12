@@ -4,8 +4,8 @@ Two deploy-ready, static-first information websites built for fast launch, SEO, 
 
 ## Sites
 
-1. `sites/can-i-breathe-today` — air quality + weather health utility using Open-Meteo public APIs.
-2. `sites/versewise` — Bible verse lookup, daily verse, and study pages using bible-api.com.
+1. `sites/check-the-air` — air quality + weather health utility using Open-Meteo public APIs.
+2. `sites/versefinder` — Bible verse lookup, daily verse, and study pages using bible-api.com.
 
 ## Fast deployment
 
@@ -30,16 +30,16 @@ npm run deploy:recommended
 
 Static roots:
 
-- Can I Breathe Today root: `sites/can-i-breathe-today`
-- VerseWise root: `sites/versewise`
+- Check the Air root: `sites/check-the-air`
+- Verse Finder root: `sites/versefinder`
 
 ## Before Google AdSense
 
 Replace these placeholders in every HTML page:
 
 - `ca-pub-XXXXXXXXXXXXXXXX` with your real AdSense publisher ID.
-- `https://canibreathetoday.com` with the real domain.
-- `https://versewise.app` with the real domain.
+- `https://checktheair.io` with the real domain.
+- `https://versefinder.io` with the real domain.
 - Contact email placeholders with a real inbox.
 
 AdSense review usually expects:
@@ -53,17 +53,17 @@ AdSense review usually expects:
 
 ## API notes
 
-Can I Breathe Today:
+Check the Air:
 - Geocoding: `https://geocoding-api.open-meteo.com/v1/search`
 - Air quality: `https://air-quality-api.open-meteo.com/v1/air-quality`
 - Weather: `https://api.open-meteo.com/v1/forecast`
 
-VerseWise:
+Verse Finder:
 - Bible API: `https://bible-api.com/{reference}`
 
 ## Monetization plan
 
 Start with Google Ads after content is live. Add affiliate blocks later:
 
-- Can I Breathe Today: air purifiers, filters, masks, allergy products.
-- VerseWise: study Bibles, devotionals, journals, Bible courses.
+- Check the Air: air purifiers, filters, masks, allergy products.
+- Verse Finder: study Bibles, devotionals, journals, Bible courses.

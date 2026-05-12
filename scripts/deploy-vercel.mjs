@@ -5,20 +5,20 @@ import { homedir } from 'node:os';
 
 const root = new URL('..', import.meta.url).pathname;
 const sites = {
-  'can-i-breathe-today': {
-    path: 'sites/can-i-breathe-today',
-    label: 'Can I Breathe Today?',
+  'check-the-air': {
+    path: 'sites/check-the-air',
+    label: 'Check the Air',
   },
-  'versewise': {
-    path: 'sites/versewise',
-    label: 'VerseWise',
+  'versefinder': {
+    path: 'sites/versefinder',
+    label: 'Verse Finder',
   },
 };
 
 const siteName = process.argv[2];
 const prod = process.argv.includes('--prod');
 if (!siteName || !sites[siteName]) {
-  console.error('Usage: node scripts/deploy-vercel.mjs <can-i-breathe-today|versewise> [--prod]');
+  console.error('Usage: node scripts/deploy-vercel.mjs <check-the-air|versefinder> [--prod]');
   process.exit(1);
 }
 
@@ -53,7 +53,7 @@ if (!token) {
   console.error('Create one at https://vercel.com/account/tokens');
   console.error('Then either run: export VERCEL_TOKEN=your_token_here');
   console.error('Or add this line to ~/.hermes/.env: VERCEL_TOKEN=your_token_here');
-  console.error(`After that: npm run deploy:${siteName === 'can-i-breathe-today' ? 'air' : 'verse'}:${prod ? 'prod' : 'preview'}`);
+  console.error(`After that: npm run deploy:${siteName === 'check-the-air' ? 'air' : 'verse'}:${prod ? 'prod' : 'preview'}`);
   process.exit(2);
 }
 

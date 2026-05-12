@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://canibreathetoday.com/sitemap.xml

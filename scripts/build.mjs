@@ -4,7 +4,7 @@ const root = new URL('..', import.meta.url).pathname;
 const dist = join(root, 'dist');
 rmSync(dist, { recursive: true, force: true });
 mkdirSync(dist, { recursive: true });
-for (const site of ['can-i-breathe-today', 'versewise']) {
+for (const site of ['check-the-air', 'versefinder']) {
   cpSync(join(root, 'sites', site), join(dist, site), { recursive: true });
 }
 console.log('Built static sites into dist/.');

@@ -3,8 +3,8 @@ import { join } from 'node:path';
 
 const root = new URL('..', import.meta.url).pathname;
 const sites = [
-  { dir: 'can-i-breathe-today', title: 'Can I Breathe Today?', required: ['index.html', 'privacy.html', 'contact.html', 'robots.txt', 'sitemap.xml', 'assets/app.js', 'assets/styles.css'] },
-  { dir: 'versewise', title: 'VerseWise', required: ['index.html', 'privacy.html', 'contact.html', 'robots.txt', 'sitemap.xml', 'assets/app.js', 'assets/styles.css'] },
+  { dir: 'check-the-air', title: 'Check the Air', required: ['index.html', 'privacy.html', 'contact.html', 'robots.txt', 'sitemap.xml', 'assets/app.js', 'assets/styles.css'] },
+  { dir: 'versefinder', title: 'Verse Finder', required: ['index.html', 'privacy.html', 'contact.html', 'robots.txt', 'sitemap.xml', 'assets/app.js', 'assets/styles.css'] },
 ];
 let failures = [];
 for (const site of sites) {

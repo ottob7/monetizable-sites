@@ -2,12 +2,12 @@
   "scripts": {
     "test": "node tests/site-check.mjs",
     "build": "node scripts/build.mjs",
-    "dev:air": "cd sites/can-i-breathe-today && python3 -m http.server 4173",
-    "dev:verse": "cd sites/versewise && python3 -m http.server 4174",
-    "deploy:air:preview": "node scripts/deploy-vercel.mjs can-i-breathe-today",
-    "deploy:air:prod": "node scripts/deploy-vercel.mjs can-i-breathe-today --prod",
-    "deploy:verse:preview": "node scripts/deploy-vercel.mjs versewise",
-    "deploy:verse:prod": "node scripts/deploy-vercel.mjs versewise --prod",
+    "dev:air": "cd sites/check-the-air && python3 -m http.server 4173",
+    "dev:verse": "cd sites/versefinder && python3 -m http.server 4174",
+    "deploy:air:preview": "node scripts/deploy-vercel.mjs check-the-air",
+    "deploy:air:prod": "node scripts/deploy-vercel.mjs check-the-air --prod",
+    "deploy:verse:preview": "node scripts/deploy-vercel.mjs versefinder",
+    "deploy:verse:prod": "node scripts/deploy-vercel.mjs versefinder --prod",
     "deploy:recommended": "npm run deploy:air:prod && npm run deploy:verse:prod"
   },
   "devDependencies": {
