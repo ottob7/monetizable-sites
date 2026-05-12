@@ -1,23 +1,14 @@
-const $=s=>document.querySelector(s);
+
+const $=s=>document.querySelector(s);const $$=s=>[...document.querySelectorAll(s)];
 const refs=['John 3:16','Psalm 23','Romans 8:28','Philippians 4:13','Jeremiah 29:11','Proverbs 3:5-6','Matthew 6:34','Isaiah 41:10'];
-async function getVerse(ref){
-  const r=await fetch(`https://bible-api.com/${encodeURIComponent(ref)}?translation=kjv`);
-  if(!r.ok) throw new Error('Verse lookup failed. Try a reference like John 3:16.');
-  return await r.json();
-}
-function render(v){
-  const text=(v.text||'').trim().replace(/\n+/g,' ');
-  $('#verseResult').innerHTML=`<article class="card"><span class="ref">${v.reference||'Verse'}</span><div class="verse">“${text}”</div><p class="muted">Translation: ${(v.translation_name||'King James Version')}</p><div class="quick"><button onclick="copyVerse()">Copy verse</button><a href="#study">Study guide</a></div></article>`;
-  window.currentVerse=`${v.reference}: ${text}`;
-}
-async function search(ref){
-  $('#verseResult').innerHTML='<div class="card loading">Looking up scripture…</div>';
-  try{render(await getVerse(ref)); history.replaceState(null,'',`#${encodeURIComponent(ref)}`)}catch(e){$('#verseResult').innerHTML=`<div class="card"><h2>Could not find that passage</h2><p class="muted">${e.message}</p></div>`}
-}
-function copyVerse(){navigator.clipboard?.writeText(window.currentVerse||'').then(()=>alert('Verse copied.'))}
-function daily(){const d=new Date(); const idx=Math.floor(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())/86400000)%refs.length; return refs[idx];}
-window.addEventListener('DOMContentLoaded',()=>{
-  $('#verseForm')?.addEventListener('submit',e=>{e.preventDefault(); const q=$('#reference').value.trim(); if(q) search(q)});
-  document.querySelectorAll('[data-ref]').forEach(b=>b.addEventListener('click',()=>search(b.dataset.ref)));
-  search(window.DEFAULT_REF || (location.hash?decodeURIComponent(location.hash.slice(1)):daily()));
-});
+const translations={kjv:'KJV',web:'WEB',bbe:'BBE','oeb-cw':'OEB','webbe':'WEBBE'};let current={ref:'',text:'',translation:'kjv',data:null,size:24};
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+async function getVerse(ref,translation='kjv'){const r=await fetch(`https://bible-api.com/${encodeURIComponent(ref)}?translation=${encodeURIComponent(translation)}`);if(!r.ok)throw new Error('Verse lookup failed. Try a reference like John 3:16 or Psalm 23.');return await r.json();}
+function daily(){const d=new Date();return refs[Math.floor(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())/86400000)%refs.length];}
+function setActive(ref){$$('[data-ref]').forEach(b=>b.classList.toggle('active',(b.dataset.ref||'').toLowerCase()===String(ref).toLowerCase()))}
+function cleanText(t){return String(t||'').replace(/\s+/g,' ').trim()}
+function render(v){current.data=v;current.ref=v.reference||current.ref;current.text=cleanText(v.text);setActive(current.ref);const verses=(v.verses&&v.verses.length?v.verses:[{verse:'',text:v.text}]);const lines=verses.map(x=>`<div class="verse-block"><span class="vnum" id="v${esc(x.verse)}">${esc(x.verse)}</span><p class="verse-copy">${esc(cleanText(x.text))}</p></div>`).join('');const idx=refs.findIndex(r=>r.toLowerCase()===current.ref.toLowerCase());const prev=refs[(idx<=0?refs.length:idx)-1],next=refs[(idx+1)%refs.length];$('#verseResult').innerHTML=`<article class="card reader-card"><div class="reader-toolbar"><span class="ref">${esc(v.reference||'Passage')}</span><div class="tool-buttons"><button class="tool" data-action="smaller">A−</button><button class="tool" data-action="larger">A+</button><button class="tool" data-action="copy">Copy</button><button class="tool" data-action="share">Share</button></div></div><div style="--reader-size:${current.size}px">${lines}</div><p class="translation-note">${esc(v.translation_name||translations[current.translation]||current.translation)}. Verse numbers are shown in the left margin for scanning, sharing, and study notes.</p><div class="quick"><button data-nav-ref="${esc(prev)}">← ${esc(prev)}</button><button data-nav-ref="${esc(next)}">${esc(next)} →</button><a href="#study">Study prompts</a></div></article>`;$$('[data-nav-ref]').forEach(b=>b.addEventListener('click',()=>search(b.dataset.navRef)));$$('[data-action]').forEach(b=>b.addEventListener('click',()=>tool(b.dataset.action)));try{localStorage.setItem('vf:last',JSON.stringify({ref:current.ref,translation:current.translation}))}catch{} }
+async function search(ref){current.ref=ref;current.translation=$('#translation')?.value||current.translation||'kjv';$('#reference')&&( $('#reference').value=ref );$('#verseResult').innerHTML='<div class="card loading">Opening the passage…</div>';try{render(await getVerse(ref,current.translation));history.replaceState(null,'',`#${encodeURIComponent(ref)}`)}catch(e){$('#verseResult').innerHTML=`<div class="card"><h2>Could not find that passage</h2><p class="muted">${esc(e.message)}</p><p class="muted">Try a book, chapter, and verse range such as <strong>John 3:16</strong>, <strong>Psalm 23</strong>, or <strong>Proverbs 3:5-6</strong>.</p></div>`}}
+function tool(action){if(action==='copy'){navigator.clipboard?.writeText(`${current.ref}: ${current.text}`).then(()=>toast('Copied passage.'));}if(action==='share'){const url=`https://versefinder.io/#${encodeURIComponent(current.ref)}`;navigator.clipboard?.writeText(url).then(()=>toast('Share link copied.'));}if(action==='larger'){current.size=Math.min(34,current.size+2);render(current.data)}if(action==='smaller'){current.size=Math.max(18,current.size-2);render(current.data)}}
+function toast(msg){const t=document.createElement('div');t.textContent=msg;t.style.cssText='position:fixed;right:18px;bottom:18px;background:#2c2114;color:#fff;padding:12px 16px;border-radius:14px;z-index:99;font:700 14px Inter';document.body.appendChild(t);setTimeout(()=>t.remove(),1800)}
+window.addEventListener('DOMContentLoaded',()=>{const saved=(()=>{try{return JSON.parse(localStorage.getItem('vf:last')||'{}')}catch{return {}}})();if($('#translation')&&saved.translation)$('#translation').value=saved.translation;$('#verseForm')?.addEventListener('submit',e=>{e.preventDefault();const q=$('#reference').value.trim();if(q)search(q)});$('#translation')?.addEventListener('change',()=>search(current.ref||$('#reference')?.value||daily()));$$('[data-ref]').forEach(b=>b.addEventListener('click',()=>search(b.dataset.ref)));search(window.DEFAULT_REF||(location.hash?decodeURIComponent(location.hash.slice(1)):(saved.ref||daily())));});
