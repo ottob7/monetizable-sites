@@ -1,6 +1,7 @@
 import { spawnSync } from 'node:child_process';
-import { existsSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { homedir } from 'node:os';
 
 const root = new URL('..', import.meta.url).pathname;
 const sites = {
@@ -36,12 +37,22 @@ console.log('');
 const test = spawnSync('npm', ['test'], { cwd: root, stdio: 'inherit', shell: false });
 if (test.status !== 0) process.exit(test.status ?? 1);
 
-const token = process.env.VERCEL_TOKEN || '';
+function tokenFromHermesEnv() {
+  const envPath = join(homedir(), '.hermes', '.env');
+  if (!existsSync(envPath)) return '';
+  const text = readFileSync(envPath, 'utf8');
+  const line = text.split(/\r?\n/).find(x => x.startsWith('VERCEL_TOKEN='));
+  if (!line) return '';
+  return line.slice('VERCEL_TOKEN='.length).trim().replace(/^['\"]|['\"]$/g, '');
+}
+
+const token = process.env.VERCEL_TOKEN || tokenFromHermesEnv();
 if (!token) {
   console.error('');
   console.error('VERCEL_TOKEN is not set.');
   console.error('Create one at https://vercel.com/account/tokens');
-  console.error('Then run: export VERCEL_TOKEN=your_token_here');
+  console.error('Then either run: export VERCEL_TOKEN=your_token_here');
+  console.error('Or add this line to ~/.hermes/.env: VERCEL_TOKEN=your_token_here');
   console.error(`After that: npm run deploy:${siteName === 'can-i-breathe-today' ? 'air' : 'verse'}:${prod ? 'prod' : 'preview'}`);
   process.exit(2);
 }

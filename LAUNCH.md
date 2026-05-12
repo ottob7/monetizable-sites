@@ -23,11 +23,19 @@ Then in the shell:
 export VERCEL_TOKEN="your_vercel_token"
 ```
 
+Or save it for Hermes deploy runs in `~/.hermes/.env`:
+
+```bash
+printf '\nVERCEL_TOKEN=your_vercel_token\n' >> ~/.hermes/.env
+```
+
 Verify:
 
 ```bash
 npx vercel whoami --token "$VERCEL_TOKEN"
 ```
+
+If you saved it only in `~/.hermes/.env`, the deploy script will still read it automatically.
 
 ### Preview deploys
 
