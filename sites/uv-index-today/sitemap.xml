@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://uv-index-today-coral.vercel.app/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+<url><loc>https://uv-index-today-coral.vercel.app/privacy.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://uv-index-today-coral.vercel.app/contact.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://uv-index-today-coral.vercel.app/city/austin-tx.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://uv-index-today-coral.vercel.app/city/los-angeles-ca.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://uv-index-today-coral.vercel.app/city/miami-fl.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://uv-index-today-coral.vercel.app/city/phoenix-az.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://uv-index-today-coral.vercel.app/city/denver-co.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://uv-index-today-coral.vercel.app/city/new-york-ny.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://uv-index-today-coral.vercel.app/city/chicago-il.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://uv-index-today-coral.vercel.app/city/seattle-wa.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+</urlset>

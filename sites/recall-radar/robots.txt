@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://recall-radar-liard.vercel.app/sitemap.xml

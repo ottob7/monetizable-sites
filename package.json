@@ -8,7 +8,17 @@
     "deploy:air:prod": "node scripts/deploy-vercel.mjs check-the-air --prod",
     "deploy:verse:preview": "node scripts/deploy-vercel.mjs versefinder",
     "deploy:verse:prod": "node scripts/deploy-vercel.mjs versefinder --prod",
-    "deploy:recommended": "npm run deploy:air:prod && npm run deploy:verse:prod"
+    "deploy:recommended": "npm run deploy:air:prod && npm run deploy:verse:prod && npm run deploy:new3:prod",
+    "dev:recall": "cd sites/recall-radar && python3 -m http.server 4175",
+    "dev:airport": "cd sites/airport-weather-watch && python3 -m http.server 4176",
+    "dev:uv": "cd sites/uv-index-today && python3 -m http.server 4177",
+    "deploy:recall:preview": "node scripts/deploy-vercel.mjs recall-radar",
+    "deploy:recall:prod": "node scripts/deploy-vercel.mjs recall-radar --prod",
+    "deploy:airport:preview": "node scripts/deploy-vercel.mjs airport-weather-watch",
+    "deploy:airport:prod": "node scripts/deploy-vercel.mjs airport-weather-watch --prod",
+    "deploy:uv:preview": "node scripts/deploy-vercel.mjs uv-index-today",
+    "deploy:uv:prod": "node scripts/deploy-vercel.mjs uv-index-today --prod",
+    "deploy:new3:prod": "npm run deploy:recall:prod && npm run deploy:airport:prod && npm run deploy:uv:prod"
   },
   "devDependencies": {
     "vercel": "^53.4.0"

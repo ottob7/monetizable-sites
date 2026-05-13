@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://airport-weather-watch.vercel.app/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+<url><loc>https://airport-weather-watch.vercel.app/privacy.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://airport-weather-watch.vercel.app/contact.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://airport-weather-watch.vercel.app/airport/kaus-austin.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://airport-weather-watch.vercel.app/airport/klax-los-angeles.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://airport-weather-watch.vercel.app/airport/kjfk-new-york.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://airport-weather-watch.vercel.app/airport/kord-chicago.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://airport-weather-watch.vercel.app/airport/katl-atlanta.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://airport-weather-watch.vercel.app/airport/kdfw-dallas.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://airport-weather-watch.vercel.app/airport/kden-denver.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://airport-weather-watch.vercel.app/airport/ksea-seattle.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+</urlset>

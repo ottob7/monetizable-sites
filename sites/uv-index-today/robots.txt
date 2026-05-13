@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://uv-index-today-coral.vercel.app/sitemap.xml
