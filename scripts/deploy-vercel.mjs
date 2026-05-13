@@ -29,9 +29,10 @@ function tokenFromHermesEnv() {
   const envPath = join(homedir(), '.hermes', '.env');
   if (!existsSync(envPath)) return '';
   const text = readFileSync(envPath, 'utf8');
-  const line = text.split(/\r?\n/).find(x => x.startsWith('VERCEL_TOKEN='));
-  if (!line) return '';
-  return line.slice('VERCEL_TOKEN='.length).trim().replace(/^['"]|['"]$/g, '');
+  const lines = text.split(/\r?\n/).filter(x => x.startsWith('VERCEL_TOKEN='));
+  if (!lines.length) return '';
+  const line = lines[lines.length - 1];
+  return line.slice('VERCEL_TOKEN='.length).trim().replace(/^["']|["']$/g, '');
 }
 const token = process.env.VERCEL_TOKEN || tokenFromHermesEnv();
 if (!token) {
