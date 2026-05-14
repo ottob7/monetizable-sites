@@ -1,0 +1,37 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RAM Price Checker - DDR4 and DDR5 memory price tracker</title><meta name="description" content="Track RAM prices by capacity, DDR generation, speed, and price per GB. Compare desktop and laptop memory kits, spot deals, follow market news, and prepare for AdSense or affiliate monetization."><link rel="canonical" href="https://ram-price-checker.vercel.app/"><link rel="sitemap" type="application/xml" href="/sitemap.xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/assets/styles.css?v=20260513-1"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"RAM Price Checker","url":"https://ram-price-checker.vercel.app","description":"Track RAM prices by capacity, DDR generation, speed, and price per GB.","potentialAction":{"@type":"SearchAction","target":"https://ram-price-checker.vercel.app/?q={search_term_string}","query-input":"required name=search_term_string"}}</script></head><body><header class="topbar"><nav class="nav"><a class="brand" href="/">RAM Price Checker</a><div class="navlinks"><a href="/#checker">Checker</a><a href="/#market">Market</a><a href="/#news">News</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a><a class="pill primary" href="/#checker">Check prices</a></div></nav></header>
+<main>
+<section class="hero">
+  <div class="hero-copy">
+    <span class="eyebrow">AI-era memory watch</span>
+    <h1>Check RAM prices before the next spike.</h1>
+    <p>Track RAM prices by capacity, DDR generation, speed, and price per GB. Compare desktop and laptop memory kits, spot deals, follow market news, and prepare for AdSense or affiliate monetization.</p>
+    <div class="hero-actions"><a class="button primary" href="#checker">Compare kits</a><a class="button" href="#news">Read market signals</a></div>
+  </div>
+  <aside class="terminal-card" aria-label="RAM market snapshot">
+    <div class="term-head"><span></span><span></span><span></span></div>
+    <pre id="marketTicker">loading price matrix...</pre>
+  </aside>
+</section>
+<div class="ad-slot"><span>Advertisement</span><p>AdSense placeholder — replace publisher ID when approved.</p></div>
+<section class="section stats" id="market">
+  <article class="stat-card"><span>DDR5 32GB watch</span><strong id="ddr5Avg">--</strong><p>Median price across tracked 2x16GB desktop kits.</p></article>
+  <article class="stat-card"><span>Best price/GB</span><strong id="bestPpg">--</strong><p>Lowest price-per-GB in the current sample watchlist.</p></article>
+  <article class="stat-card"><span>AI pressure signal</span><strong>High</strong><p>HBM, server DRAM, and consumer DDR supply are connected through fab capacity.</p></article>
+</section>
+<section class="section checker" id="checker">
+  <div class="section-head"><span class="eyebrow">Live price checker</span><h2>Find the best RAM value by capacity, speed, and generation.</h2><p>Filter the current watchlist, compare price per GB, then verify live retailer listings. When a provider API key is configured, this section pulls live pricing through the site API.</p><p id="dataStatus" class="data-status">Checking live price providers…</p></div>
+  <form class="filters" id="filterForm">
+    <label>Generation<select id="generation"><option value="all">All</option><option>DDR5</option><option>DDR4</option><option>Laptop</option></select></label>
+    <label>Capacity<select id="capacity"><option value="all">All</option><option value="16">16GB</option><option value="32">32GB</option><option value="64">64GB</option><option value="96">96GB+</option></select></label>
+    <label>Sort<select id="sort"><option value="value">Best value</option><option value="price">Lowest price</option><option value="speed">Fastest speed</option></select></label>
+    <label>Search<input id="query" placeholder="Corsair, Crucial, 6000, laptop"></label>
+  </form>
+  <div id="priceGrid" class="price-grid"></div>
+</section>
+<section class="section split">
+  <article class="card"><span class="eyebrow">Buying signal</span><h2>What matters when RAM is expensive?</h2><ul class="clean"><li>Price per GB: the fastest way to see whether a kit is actually cheap.</li><li>Capacity first: 32GB is the sweet spot for gaming and creator PCs; 64GB+ matters for local AI, heavy video, and workstations.</li><li>Platform fit: DDR5 prices do not help if your board only accepts DDR4.</li><li>Latency and speed: DDR5-6000 CL30-class kits are common sweet spots for AMD/Intel desktops.</li></ul></article>
+  <article class="card glow"><span class="eyebrow">Monetization path</span><h2>Built for ads now, affiliate links later.</h2><p>The MVP is useful with static price intelligence and live search links. Later we can connect Amazon Associates, eBay Partner Network, Best Buy/retailer feeds, or a paid product-search API for true live pricing.</p></article>
+</section>
+<section class="section" id="news"><div class="section-head"><span class="eyebrow">Tech news radar</span><h2>Memory and AI hardware headlines.</h2><p>Client-side news cards pull recent Hacker News search results for DRAM, HBM, RAM prices, and AI memory topics when available.</p></div><div id="newsGrid" class="news-grid"><article class="card">Loading memory-market headlines…</article></div></section>
+<section class="section guides" id="guides"><div class="section-head"><span class="eyebrow">SEO guides</span><h2>Popular RAM price pages.</h2></div><div class="guide-grid"><a class="guide" href="guide/ddr5-32gb-prices.html">DDR5 32GB prices</a><a class="guide" href="guide/ddr4-32gb-prices.html">DDR4 32GB prices</a><a class="guide" href="guide/64gb-ram-prices.html">64GB RAM prices</a><a class="guide" href="guide/laptop-ram-prices.html">Laptop RAM prices</a><a class="guide" href="guide/ram-price-per-gb.html">RAM price per GB</a><a class="guide" href="deals/cheap-ddr5-ram.html">Cheap DDR5 RAM deals</a></div></section>
+</main><footer class="footer"><div><b>RAM Price Checker</b><p>Independent memory price tracking, buying guidance, and market context. Prices are sample watchlist snapshots until live retailer feeds or affiliate APIs are connected.</p></div><div><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a><a href="sitemap.xml">Sitemap</a></div></footer><script src="/assets/app.js?v=20260513-1"></script></body></html>

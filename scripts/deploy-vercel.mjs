@@ -9,6 +9,7 @@ const sites = {
   'recall-radar': { path: 'sites/recall-radar', label: 'Recall Radar' },
   'airport-weather-watch': { path: 'sites/airport-weather-watch', label: 'Airport Weather Watch' },
   'uv-index-today': { path: 'sites/uv-index-today', label: 'UV Index Today' },
+  'ram-price-checker': { path: 'sites/ram-price-checker', label: 'RAM Price Checker' },
 };
 const siteName = process.argv[2];
 const prod = process.argv.includes('--prod');

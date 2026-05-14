@@ -2,6 +2,7 @@
   "scripts": {
     "test": "node tests/site-check.mjs",
     "build": "node scripts/build.mjs",
+    "update:ram-prices": "node scripts/update-ram-prices.mjs",
     "dev:air": "cd sites/check-the-air && python3 -m http.server 4173",
     "dev:verse": "cd sites/versefinder && python3 -m http.server 4174",
     "deploy:air:preview": "node scripts/deploy-vercel.mjs check-the-air",
@@ -12,13 +13,17 @@
     "dev:recall": "cd sites/recall-radar && python3 -m http.server 4175",
     "dev:airport": "cd sites/airport-weather-watch && python3 -m http.server 4176",
     "dev:uv": "cd sites/uv-index-today && python3 -m http.server 4177",
+    "dev:ram": "cd sites/ram-price-checker && python3 -m http.server 4178",
     "deploy:recall:preview": "node scripts/deploy-vercel.mjs recall-radar",
     "deploy:recall:prod": "node scripts/deploy-vercel.mjs recall-radar --prod",
     "deploy:airport:preview": "node scripts/deploy-vercel.mjs airport-weather-watch",
     "deploy:airport:prod": "node scripts/deploy-vercel.mjs airport-weather-watch --prod",
     "deploy:uv:preview": "node scripts/deploy-vercel.mjs uv-index-today",
     "deploy:uv:prod": "node scripts/deploy-vercel.mjs uv-index-today --prod",
-    "deploy:new3:prod": "npm run deploy:recall:prod && npm run deploy:airport:prod && npm run deploy:uv:prod"
+    "deploy:ram:preview": "node scripts/deploy-vercel.mjs ram-price-checker",
+    "deploy:ram:prod": "node scripts/deploy-vercel.mjs ram-price-checker --prod",
+    "deploy:new3:prod": "npm run deploy:recall:prod && npm run deploy:airport:prod && npm run deploy:uv:prod",
+    "deploy:rampricechecker:prod": "npm run deploy:ram:prod"
   },
   "devDependencies": {
     "vercel": "^53.4.0"

@@ -7,6 +7,7 @@ const sites = [
   { dir: 'recall-radar', title: 'Recall Radar' },
   { dir: 'airport-weather-watch', title: 'Airport Weather Watch' },
   { dir: 'uv-index-today', title: 'UV Index Today' },
+  { dir: 'ram-price-checker', title: 'RAM Price Checker' },
 ];
 const required = ['index.html', 'privacy.html', 'contact.html', 'robots.txt', 'sitemap.xml', 'assets/app.js', 'assets/styles.css'];
 let failures = [];
