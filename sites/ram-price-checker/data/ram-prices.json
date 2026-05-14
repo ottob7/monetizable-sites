@@ -1,7 +1,7 @@
 {
   "status": "snapshot",
   "provider": "SerpApi Google Shopping daily snapshot",
-  "updatedAt": "2026-05-14T02:12:40.441Z",
+  "updatedAt": "2026-05-14T02:49:15.775Z",
   "cadence": "daily",
   "visitorApiUsage": "none: visitors read this static JSON snapshot; SerpApi is called only by the scheduled updater",
   "queries": [
