@@ -1,7 +1,7 @@
 {
   "status": "sample",
   "provider": "sample watchlist",
-  "updatedAt": "2026-09-20T14:16:46.933Z",
+  "updatedAt": "2026-09-21T16:32:24.838Z",
   "cadence": "daily",
   "visitorApiUsage": "none: visitors read this static JSON snapshot; SerpApi is called only by the scheduled updater",
   "queries": [
